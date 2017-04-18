@@ -1,9 +1,14 @@
-# api documentation for  [babylon (v6.16.1)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babylon.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babylon) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babylon.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babylon)
+# npmdoc-babylon
+
+#### api documentation for  [babylon (v6.16.1)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babylon.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babylon) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babylon.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babylon)
+
 #### A JavaScript parser
 
-[![NPM](https://nodei.co/npm/babylon.png?downloads=true)](https://www.npmjs.com/package/babylon)
+[![NPM](https://nodei.co/npm/babylon.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/babylon)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-babylon/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-babylon_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babylon/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-babylon/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-babylon/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-babylon/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babylon/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-babylon/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Sebastian McKenzie",
-        "email": "sebmck@gmail.com"
+        "name": "Sebastian McKenzie"
     },
     "ava": {
         "files": [
@@ -209,36 +213,28 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "amasad",
-            "email": "amjad.masad@gmail.com"
+            "name": "amasad"
         },
         {
-            "name": "danez",
-            "email": "daniel@tschinder.de"
+            "name": "danez"
         },
         {
-            "name": "gabelevi",
-            "email": "gabelevi@gmail.com"
+            "name": "gabelevi"
         },
         {
-            "name": "hzoo",
-            "email": "hi@henryzoo.com"
+            "name": "hzoo"
         },
         {
-            "name": "jmm",
-            "email": "npm-public@jessemccarthy.net"
+            "name": "jmm"
         },
         {
-            "name": "loganfsmyth",
-            "email": "loganfsmyth@gmail.com"
+            "name": "loganfsmyth"
         },
         {
-            "name": "sebmck",
-            "email": "sebmck@gmail.com"
+            "name": "sebmck"
         },
         {
-            "name": "thejameskyle",
-            "email": "me@thejameskyle.com"
+            "name": "thejameskyle"
         }
     ],
     "name": "babylon",
@@ -251,7 +247,6 @@
         "instrument": false
     },
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/babel/babylon.git"
@@ -272,79 +267,6 @@
     },
     "version": "6.16.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module babylon](#apidoc.module.babylon)
-1.  [function <span class="apidocSignatureSpan">babylon.</span>parse (input, options)](#apidoc.element.babylon.parse)
-1.  [function <span class="apidocSignatureSpan">babylon.</span>parseExpression (input, options)](#apidoc.element.babylon.parseExpression)
-1.  object <span class="apidocSignatureSpan">babylon.</span>tokTypes
-
-
-
-# <a name="apidoc.module.babylon"></a>[module babylon](#apidoc.module.babylon)
-
-#### <a name="apidoc.element.babylon.parse"></a>[function <span class="apidocSignatureSpan">babylon.</span>parse (input, options)](#apidoc.element.babylon.parse)
-- description and source-code
-```javascript
-function parse(input, options) {
-  return new Parser(options, input).parse();
-}
-```
-- example usage
-```shell
-...
-Heavily based on [acorn](https://github.com/marijnh/acorn) and [acorn-jsx](https://github.com/RReverser/acorn-jsx),
-thanks to the awesome work of [@RReverser](https://github.com/RReverser) and [@marijnh](https://github.com/marijnh).
-
-Significant diversions are expected to occur in the future such as streaming, EBNF definitions, sweet.js integration, interspatial
- parsing and more.
-
-## API
-
-### 'babylon.parse(code, [options])'
-
-### 'babylon.parseExpression(code, [options])'
-
-'parse()' parses the provided 'code' as an entire ECMAScript program, while
-'parseExpression()' tries to parse a single Expression with performance in
-mind. When in doubt, use '.parse()'.
-...
-```
-
-#### <a name="apidoc.element.babylon.parseExpression"></a>[function <span class="apidocSignatureSpan">babylon.</span>parseExpression (input, options)](#apidoc.element.babylon.parseExpression)
-- description and source-code
-```javascript
-function parseExpression(input, options) {
-  var parser = new Parser(options, input);
-  if (parser.options.strictMode) {
-    parser.state.strict = true;
-  }
-  return parser.getExpression();
-}
-```
-- example usage
-```shell
-...
-
-Significant diversions are expected to occur in the future such as streaming, EBNF definitions, sweet.js integration, interspatial
- parsing and more.
-
-## API
-
-### 'babylon.parse(code, [options])'
-
-### 'babylon.parseExpression(code, [options])'
-
-'parse()' parses the provided 'code' as an entire ECMAScript program, while
-'parseExpression()' tries to parse a single Expression with performance in
-mind. When in doubt, use '.parse()'.
-
-### Options
-...
 ```
 
 
