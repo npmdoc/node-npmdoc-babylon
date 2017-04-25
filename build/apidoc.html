@@ -51,7 +51,7 @@
 
         href="https://babeljs.io/"
 
-    >babylon (v6.16.1)</a>
+    >babylon (v6.17.0)</a>
 </h1>
 <h4>A JavaScript parser</h4>
 <div class="apidocSectionDiv"><a
@@ -87,32 +87,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.babylon.parse">module babylon.parse</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.babylon.parse.parse">
-            function <span class="apidocSignatureSpan">babylon.</span>parse
-            <span class="apidocSignatureSpan">(input, options)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.babylon.parseExpression">module babylon.parseExpression</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.babylon.parseExpression.parseExpression">
-            function <span class="apidocSignatureSpan">babylon.</span>parseExpression
-            <span class="apidocSignatureSpan">(input, options)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -130,21 +104,21 @@
   return new Parser(options, input).parse();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Heavily based on [acorn](https://github.com/marijnh/acorn) and [acorn-jsx](https://github.com/RReverser/acorn-jsx),
-thanks to the awesome work of [@RReverser](https://github.com/RReverser) and [@marijnh](https://github.com/marijnh).
 
-Significant diversions are expected to occur in the future such as streaming, EBNF definitions, sweet.js integration, interspatial
- parsing and more.
+### :nail_care: Polish
 
-## API
+- Use rollup for bundling to speed up startup time ([#190](https://github.com/babel/babylon/pull/190)) ([@drewml](https://github
+.com/DrewML))
 
-### `babylon.<span class="apidocCodeKeywordSpan">parse</span>(code, [options])`
+```js
+const babylon = require(&#x27;babylon&#x27;);
+const ast = babylon.<span class="apidocCodeKeywordSpan">parse</span>(&#x27;var foo = &#x22;lol&#x22;;&#x27;);
+```
 
-### `babylon.parseExpression(code, [options])`
+With that test case, there was a ~95ms savings by removing the need for node to build/traverse the dependency graph.
 
-`parse()` parses the provided `code` as an entire ECMAScript program, while
-`parseExpression()` tries to parse a single Expression with performance in
-mind. When in doubt, use `.parse()`.
+**Without bundling**
+![image](https://cloud.githubusercontent.com/assets/5233399/19420264/3133497e-93ad-11e6-9a6a-2da59c4f5c13.png)
 ...</pre></li>
     </ul>
 
@@ -184,82 +158,6 @@ mind. When in doubt, use `.parse()`.
     </ul>
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.babylon.parse" id="apidoc.module.babylon.parse">module babylon.parse</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.babylon.parse.parse" id="apidoc.element.babylon.parse.parse">
-        function <span class="apidocSignatureSpan">babylon.</span>parse
-        <span class="apidocSignatureSpan">(input, options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function parse(input, options) {
-  return new Parser(options, input).parse();
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-Heavily based on [acorn](https://github.com/marijnh/acorn) and [acorn-jsx](https://github.com/RReverser/acorn-jsx),
-thanks to the awesome work of [@RReverser](https://github.com/RReverser) and [@marijnh](https://github.com/marijnh).
-
-Significant diversions are expected to occur in the future such as streaming, EBNF definitions, sweet.js integration, interspatial
- parsing and more.
-
-## API
-
-### `babylon.<span class="apidocCodeKeywordSpan">parse</span>(code, [options])`
-
-### `babylon.parseExpression(code, [options])`
-
-`parse()` parses the provided `code` as an entire ECMAScript program, while
-`parseExpression()` tries to parse a single Expression with performance in
-mind. When in doubt, use `.parse()`.
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.babylon.parseExpression" id="apidoc.module.babylon.parseExpression">module babylon.parseExpression</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.babylon.parseExpression.parseExpression" id="apidoc.element.babylon.parseExpression.parseExpression">
-        function <span class="apidocSignatureSpan">babylon.</span>parseExpression
-        <span class="apidocSignatureSpan">(input, options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function parseExpression(input, options) {
-  var parser = new Parser(options, input);
-  if (parser.options.strictMode) {
-    parser.state.strict = true;
-  }
-  return parser.getExpression();
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Significant diversions are expected to occur in the future such as streaming, EBNF definitions, sweet.js integration, interspatial
- parsing and more.
-
-## API
-
-### `babylon.parse(code, [options])`
-
-### `babylon.<span class="apidocCodeKeywordSpan">parseExpression</span>(code, [options])`
-
-`parse()` parses the provided `code` as an entire ECMAScript program, while
-`parseExpression()` tries to parse a single Expression with performance in
-mind. When in doubt, use `.parse()`.
-
-### Options
-...</pre></li>
-    </ul>
 
 
 </div>
