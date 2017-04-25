@@ -1,6 +1,6 @@
 # npmdoc-babylon
 
-#### api documentation for  [babylon (v6.16.1)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babylon.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babylon) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babylon.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babylon)
+#### basic api documentation for  [babylon (v6.17.0)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babylon.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babylon) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babylon.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babylon)
 
 #### A JavaScript parser
 
@@ -179,24 +179,25 @@
         "eslint": "^3.7.1",
         "eslint-config-babel": "^6.0.0",
         "eslint-plugin-flowtype": "^2.20.0",
-        "flow-bin": "^0.38.0",
+        "flow-bin": "^0.42.0",
         "nyc": "^10.0.0",
         "rimraf": "^2.5.4",
         "rollup": "^0.41.0",
         "rollup-plugin-babel": "^2.6.1",
         "rollup-plugin-node-resolve": "^2.0.0",
+        "rollup-watch": "^3.2.2",
         "unicode-9.0.0": "~0.7.0"
     },
     "directories": {},
     "dist": {
-        "shasum": "30c5a22f481978a9e7f8cdfdf496b11d94b404d3",
-        "tarball": "https://registry.npmjs.org/babylon/-/babylon-6.16.1.tgz"
+        "shasum": "37da948878488b9c4e3c4038893fa3314b3fc932",
+        "tarball": "https://registry.npmjs.org/babylon/-/babylon-6.17.0.tgz"
     },
     "files": [
         "bin",
         "lib"
     ],
-    "gitHead": "539d345d9b23ae1331a4beb13e2de91b0a9020e6",
+    "gitHead": "2e17e5bc399b9615baa4017f792ab2bac41cae13",
     "greenkeeper": {
         "ignore": [
             "cross-env"
@@ -213,28 +214,7 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "amasad"
-        },
-        {
             "name": "danez"
-        },
-        {
-            "name": "gabelevi"
-        },
-        {
-            "name": "hzoo"
-        },
-        {
-            "name": "jmm"
-        },
-        {
-            "name": "loganfsmyth"
-        },
-        {
-            "name": "sebmck"
-        },
-        {
-            "name": "thejameskyle"
         }
     ],
     "name": "babylon",
@@ -263,9 +243,9 @@
         "test": "npm run lint && npm run flow && npm run build -- -m && npm run test-only",
         "test-ci": "nyc npm run test-only",
         "test-only": "ava",
-        "watch": "npm run clean && cross-env BABEL_ENV=watch babel src --out-dir lib --watch"
+        "watch": "npm run clean && rollup -c --watch"
     },
-    "version": "6.16.1"
+    "version": "6.17.0"
 }
 ```
 
